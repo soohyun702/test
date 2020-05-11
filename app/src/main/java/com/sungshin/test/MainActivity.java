@@ -1,10 +1,12 @@
 package com.sungshin.test;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import java.util.ArrayList;
@@ -14,6 +16,15 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+
+    private static final String TAG = "MainActivity";
+
+    private ArrayList<ItemObject> rowListItem;
+    private ReviewAdapter reviewAdapter;
+    private LinearLayoutManager mLinearLayoutManager;
+    private RecyclerView recyclerView;
+    Uri mUri = null;
+
 
     // 아이템 리스트
     //private String[] myDataset;
@@ -26,6 +37,16 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SplashActivity.class);
         startActivity(intent);
 
+        //이밑으로 review관련
+        rowListItem = getAllItemList();
+        mLinearLayoutManager = new GridLayoutManager(MainActivity.this, 2);
+        recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view1);
+        recyclerView.setLayoutManager(mLinearLayoutManager);
+        reviewAdapter = new ReviewAdapter(this, rowListItem);
+        recyclerView.setAdapter(reviewAdapter);
+
+
+        //이 밑으로 테이블/좌석
         //데이터준비-실제로는 ArrayList<>등을 사용해야 할듯 하다.
         //인터넷이나 폰에 있는 DB에서 아이템을 가져와 배열에 담아 주면 된다.
         //myDataset = new String[]{"도봉순", "이순신", "강감찬","세종대왕"};
@@ -49,8 +70,20 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
     }
 
+    private ArrayList<ItemObject> getAllItemList(){
+        mUri = Uri.parse("http://sample.png");
+        //Log.d(TAG, "uri: " + String.valueOf(mUri));
+        ArrayList<ItemObject> allItems = new ArrayList<ItemObject>();
+        allItems.add(new ItemObject("정말 맛집","★★★★★", mUri));
+        allItems.add(new ItemObject("맛없어요", "★★☆☆☆", mUri));
+        allItems.add(new ItemObject("서비스 최고","★★★★☆", mUri));
+        allItems.add(new ItemObject("맛있어요","★★★★☆", mUri));
+        allItems.add(new ItemObject("다시 올 법한 가게", "★★★★★", mUri));
 
-    //아이템 클라스
+        return allItems;
+    }
+
+    //테이블 좌석 아이템 클라스
     public class item {
         String name;
         int count;
