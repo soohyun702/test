@@ -1,26 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-    android:text="회원목록"
-    android:id="@+id/tv_title"
-    android:layout_margin="8dp"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" />
-
-    <!-- A RecyclerView with some commonly used attributes -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/my_recycler_view"
-        android:scrollbars="horizontal"
-        android:orientation="horizontal"
-        android:layout_below="@+id/tv_title"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:fillViewport="true"
+        android:id="@+id/store_detail_scrollview0">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/store_detail_imageview0"
+                android:layout_width="match_parent"
+                android:layout_height="102dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/a"
+                android:scaleType="fitXY"/>
+
+            <TextView
+                android:id="@+id/store_detail_textview0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="달콤 디저트"
+                android:textSize="36sp"
+                android:layout_marginVertical="5dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/store_detail_textview1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center"
+                    android:text="현재 혼잡도는"
+                    android:textSize="32sp" />
+
+                <TextView
+                    android:id="@+id/store_detail_textview2"
+                    android:layout_width="104dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center"
+                    android:text="혼잡"
+                    android:textSize="32sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/store_detail_textview3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginBottom="500dp"
+                android:gravity="left"
+                android:text="편의시설"
+                android:textSize="20sp" />
 
 
-</RelativeLayout>
+            <!-- A RecyclerView with some commonly used attributes -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/my_recycler_view"
+                android:scrollbars="horizontal"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
