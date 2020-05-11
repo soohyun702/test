@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import java.util.ArrayList;
@@ -22,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Intent intent = new Intent(this, SplashActivity.class);
+        startActivity(intent);
 
         //데이터준비-실제로는 ArrayList<>등을 사용해야 할듯 하다.
         //인터넷이나 폰에 있는 DB에서 아이템을 가져와 배열에 담아 주면 된다.
