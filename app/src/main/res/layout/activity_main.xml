@@ -68,21 +68,28 @@
                 android:id="@+id/store_detail_textview3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginBottom="300dp"
-                android:gravity="left"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="20dp"
                 android:text="편의시설"
-                android:textSize="20sp" />
+                android:textSize="25sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/my_recycler_view_convenience"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="40dp"
+                android:overScrollMode="never"
+                android:scrollbars="none" />
 
             <TextView
                 android:id="@+id/store_detail_textview4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginBottom="5dp"
                 android:gravity="left"
                 android:text="테이블/좌석 수"
-                android:textSize="20sp" />
+                android:textSize="25sp" />
 
             <!-- A RecyclerView with some commonly used attributes -->
             <androidx.recyclerview.widget.RecyclerView
@@ -97,11 +104,11 @@
                 android:id="@+id/store_detail_textview5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginBottom="5dp"
                 android:gravity="left"
                 android:text="Review"
-                android:textSize="20sp" />
+                android:textSize="25sp" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/my_recycler_view1"

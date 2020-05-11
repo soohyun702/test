@@ -6,17 +6,34 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.drawable.Icon;
 import android.net.Uri;
 import android.os.Bundle;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    //여기는 편의시설
+    private RecyclerView recyclerView_convenience;
+    private CovenienceAdapter adapter_convenience;
+    private GridLayoutManager layoutManager;
 
+    ArrayList<IconItem> list = new ArrayList<IconItem>() {{
+        add(new IconItem("와이파이",R.drawable.wifi_on));
+        add(new IconItem("혼밥",R.drawable.reserve_on));
+        add(new IconItem("콘센트",R.drawable.plug_on));
+        add(new IconItem("주차이용",R.drawable.car_on));
+        add(new IconItem("예약주문",R.drawable.call_on));
+
+    }};
+
+
+    //여기는 테이블 좌석
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
+    //여기부터 밑은 review
     private static final String TAG = "MainActivity";
 
     private ArrayList<ItemObject> rowListItem;
@@ -26,16 +43,26 @@ public class MainActivity extends AppCompatActivity {
     Uri mUri = null;
 
 
-    // 아이템 리스트
+    // 테이블 좌석의 아이템 리스트
     //private String[] myDataset;
     private static ArrayList<item> itemArrayList;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //스플래시
         Intent intent = new Intent(this, SplashActivity.class);
         startActivity(intent);
+
+        recyclerView_convenience = (RecyclerView)findViewById(R.id.my_recycler_view_convenience);
+        adapter_convenience = new  CovenienceAdapter(getApplicationContext(), list);
+        layoutManager = new GridLayoutManager(getApplicationContext(), 2);
+        recyclerView_convenience.setLayoutManager(layoutManager);
+        recyclerView_convenience.setHasFixedSize(true);
+        recyclerView_convenience.setAdapter(adapter_convenience);
+
 
         //이밑으로 review관련
         rowListItem = getAllItemList();
