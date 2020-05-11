@@ -19,17 +19,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     // you provide access to all the views for a data item in a view holder
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // 사용될 항목들 선언
-        public TextView mName;
-        public TextView mAge;
-        public TextView mEmail;
-        public ImageView mPhoto;
+        public TextView tableName_text;
+        public TextView tableCount_text;
+        public ImageView tableImage_image;
 
         public ViewHolder(View v) {
             super(v);
 
-            mName = (TextView) v.findViewById(R.id.info_text);
-            mAge = (TextView) v.findViewById(R.id.info_age);
-            mEmail = (TextView) v.findViewById(R.id.info_email);
+            tableName_text = (TextView) v.findViewById(R.id.tableName);
+            tableCount_text = (TextView) v.findViewById(R.id.tableCount);
+            tableImage_image = (ImageView) v.findViewById(R.id.table_Image);
         }
     }
 
@@ -56,9 +55,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        holder.mName.setText(mDataset.get(position).getName());
-        holder.mAge.setText(String.valueOf(mDataset.get(position).getAge())+"세"); //int를 가져온다는점 유의
-        holder.mEmail.setText(mDataset.get(position).getEmail());
+        holder.tableName_text.setText(mDataset.get(position).getName());
+        holder.tableCount_text.setText(String.valueOf(mDataset.get(position).getCount())+"개"); //int를 가져온다는점 유의
         //holder.mPhoto.setImageBitmap(mDataset.get(position).getPhoto()); //첨부된 이미지를 연결해줘야 하는데 이건 또 복잡하다. 이건 나중에...
 
     }

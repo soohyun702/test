@@ -32,11 +32,11 @@ public class MainActivity extends AppCompatActivity {
         //ArrayList 생성
         itemArrayList = new ArrayList<>();
         //ArrayList에 값 추가하기
-        itemArrayList.add(new item("도봉순", 23, "dkdkdk@kdkdkd.com", null));
-        itemArrayList.add(new item("김월매", 22, "dddd@gmail.com", null));
-        itemArrayList.add(new item("아차산", 35, "oodd@gmail.com", null));
-        itemArrayList.add(new item("고칼슘", 21, "ffdd@gmail.com", null));
-        itemArrayList.add(new item("오순이", 29, "eedd@gmail.com", null));
+        itemArrayList.add(new item("1인용 테이블", 8, null));
+        itemArrayList.add(new item("2인용 테이블", 4, null));
+        itemArrayList.add(new item("4인용 테이블", 6, null));
+        itemArrayList.add(new item("1인용 좌석", 24, null));
+        itemArrayList.add(new item("2인용 좌석", 8, null));
 
         mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
         mRecyclerView.setHasFixedSize(true);//옵션
@@ -53,14 +53,12 @@ public class MainActivity extends AppCompatActivity {
     //아이템 클라스
     public class item {
         String name;
-        int age;
-        String email;
+        int count;
         String photo;
 
-        public item(String name, int age, String email, String photo) {
+        public item(String name, int count, String photo) {
             this.name = name;
-            this.age = age;
-            this.email = email;
+            this.count = count;
             this.photo = photo;
         }
 
@@ -68,16 +66,10 @@ public class MainActivity extends AppCompatActivity {
             return name;
         }
 
-        public int getAge() {
-            return age;
+        public int getCount() {
+            return count;
         }
 
-        public String getEmail() {
-            return email;
-        }
-
-        public String getPhoto() {
-            return photo;
-        }
+        public String getPhoto() { return photo; }
     }
 }
