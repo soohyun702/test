@@ -32,11 +32,11 @@ public class MainActivity extends AppCompatActivity {
         //ArrayList 생성
         itemArrayList = new ArrayList<>();
         //ArrayList에 값 추가하기
-        itemArrayList.add(new item("1인용 테이블", 8, null));
-        itemArrayList.add(new item("2인용 테이블", 4, null));
-        itemArrayList.add(new item("4인용 테이블", 6, null));
-        itemArrayList.add(new item("1인용 좌석", 24, null));
-        itemArrayList.add(new item("2인용 좌석", 8, null));
+        itemArrayList.add(new item("1인용 테이블", 8, R.mipmap.image1));
+        itemArrayList.add(new item("2인용 테이블", 4, R.mipmap.image2));
+        itemArrayList.add(new item("4인용 테이블", 6, R.mipmap.image3));
+        itemArrayList.add(new item("1인용 좌석", 24, R.mipmap.image1));
+        itemArrayList.add(new item("2인용 좌석", 8, R.mipmap.image1));
 
         mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
         mRecyclerView.setHasFixedSize(true);//옵션
@@ -54,9 +54,9 @@ public class MainActivity extends AppCompatActivity {
     public class item {
         String name;
         int count;
-        String photo;
+        int photo;
 
-        public item(String name, int count, String photo) {
+        public item(String name, int count, int photo) {
             this.name = name;
             this.count = count;
             this.photo = photo;
@@ -70,6 +70,6 @@ public class MainActivity extends AppCompatActivity {
             return count;
         }
 
-        public String getPhoto() { return photo; }
+        public int getPhoto() { return photo; }
     }
 }

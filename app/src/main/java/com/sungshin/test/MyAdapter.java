@@ -57,6 +57,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         // - replace the contents of the view with that element
         holder.tableName_text.setText(mDataset.get(position).getName());
         holder.tableCount_text.setText(String.valueOf(mDataset.get(position).getCount())+"개"); //int를 가져온다는점 유의
+        holder.tableImage_image.setImageResource(mDataset.get(position).getPhoto());
         //holder.mPhoto.setImageBitmap(mDataset.get(position).getPhoto()); //첨부된 이미지를 연결해줘야 하는데 이건 또 복잡하다. 이건 나중에...
 
     }
