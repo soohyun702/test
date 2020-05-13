@@ -14,6 +14,11 @@
         android:orientation="vertical"
         card_view:cardCornerRadius="4dp">
 
+        <ImageView
+            android:id="@+id/reviewImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
     </androidx.cardview.widget.CardView>
 
 
@@ -21,24 +26,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="4dp">
 
-        <ImageView
-            android:id="@+id/reviewImage"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+
 
         <TextView
             android:id="@+id/reviewName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="15dp" />
+            android:textSize="15dp"
+            android:gravity="center"/>
 
         <TextView
             android:id="@+id/reviewScore"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="15dp"/>
+            android:textSize="15dp"
+            android:gravity="center"/>
 
     </LinearLayout>
 

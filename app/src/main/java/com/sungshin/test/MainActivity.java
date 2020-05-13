@@ -41,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayoutManager mLinearLayoutManager;
     private RecyclerView recyclerView;
     Uri mUri = null;
+    Uri mUri1 = null;
+    Uri mUri2 = null;
+    Uri mUri3 = null;
 
 
     // 테이블 좌석의 아이템 리스트
@@ -56,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SplashActivity.class);
         startActivity(intent);
 
+        //편의시설
         recyclerView_convenience = (RecyclerView)findViewById(R.id.my_recycler_view_convenience);
         adapter_convenience = new  CovenienceAdapter(getApplicationContext(), list);
         layoutManager = new GridLayoutManager(getApplicationContext(), 2);
@@ -80,8 +84,8 @@ public class MainActivity extends AppCompatActivity {
         //ArrayList 생성
         itemArrayList = new ArrayList<>();
         //ArrayList에 값 추가하기
-        itemArrayList.add(new item("1인용 테이블", 8, R.mipmap.image1));
-        itemArrayList.add(new item("2인용 테이블", 4, R.mipmap.image2));
+        itemArrayList.add(new item("1인용 테이블", 8, R.mipmap.image2));
+        itemArrayList.add(new item("2인용 테이블", 4, R.mipmap.image3));
         itemArrayList.add(new item("4인용 테이블", 6, R.mipmap.image3));
         itemArrayList.add(new item("1인용 좌석", 24, R.mipmap.image1));
         itemArrayList.add(new item("2인용 좌석", 8, R.mipmap.image1));
@@ -99,13 +103,14 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayList<ItemObject> getAllItemList(){
         mUri = Uri.parse("http://sample.png");
+
         //Log.d(TAG, "uri: " + String.valueOf(mUri));
         ArrayList<ItemObject> allItems = new ArrayList<ItemObject>();
-        allItems.add(new ItemObject("정말 맛집","★★★★★", mUri));
-        allItems.add(new ItemObject("맛없어요", "★★☆☆☆", mUri));
-        allItems.add(new ItemObject("서비스 최고","★★★★☆", mUri));
-        allItems.add(new ItemObject("맛있어요","★★★★☆", mUri));
-        allItems.add(new ItemObject("다시 올 법한 가게", "★★★★★", mUri));
+        allItems.add(new ItemObject("정말 맛집","★★★★★", R.drawable.macaron1));
+        allItems.add(new ItemObject("맛없어요", "★★☆☆☆", R.drawable.macaron2));
+        allItems.add(new ItemObject("서비스 최고","★★★★☆", R.drawable.macaron3));
+        allItems.add(new ItemObject("맛있어요","★★★★☆", R.drawable.macaron4));
+        allItems.add(new ItemObject("다시 올 법한 가게", "★★★★★", R.drawable.macaron5));
 
         return allItems;
     }

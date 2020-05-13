@@ -5,12 +5,14 @@ import android.net.Uri;
 public class ItemObject {
     private String title;
     private String score;
-    private Uri photo;
+    private int image;
+    //private Uri photo;
 
-    public ItemObject(String title, String score, Uri photo) {
+    public ItemObject(String title, String score, int image) {
         this.title = title;
         this.score = score;
-        this.photo = photo;
+        this.image = image;
+        //this.photo = photo;
     }
 
     public String getTitle() {
@@ -29,11 +31,12 @@ public class ItemObject {
         this.title = score;
     }
 
-    public Uri getPhoto() {
-        return photo;
-    }
+    public int getImage() {return image;}
 
-    public void setPhoto(Uri photo) {
-        this.photo = photo;
-    }
+    public void setImage(int image){this.image = image;}
+
+    //public Uri getPhoto() { return photo;}
+
+    //public void setPhoto(Uri photo) {this.photo = photo;
+    // }
 }

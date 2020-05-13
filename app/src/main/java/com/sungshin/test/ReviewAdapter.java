@@ -37,8 +37,9 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.RecyclerVi
     public void onBindViewHolder(RecyclerViewHolders holder, int position) {
         holder.reviewName_text.setText(itemList.get(position).getTitle());
         holder.reviewScore_text.setText(itemList.get(position).getScore());
-        //holder.ivPhoto.setImageURI(itemList.get(position).getPhoto());
-        Glide.with(context).load(itemList.get(position).getPhoto()).centerCrop().into(holder.reviewImage_imgae);
+        holder.reviewImage_imgae.setImageResource(itemList.get(position).getImage());
+        //holder.reviewImage_imgae.setImageURI(itemList.get(position).getPhoto());
+        //Glide.with(context).load(itemList.get(position).getPhoto()).centerCrop().into(holder.reviewImage_imgae);
     }
 
     @Override
