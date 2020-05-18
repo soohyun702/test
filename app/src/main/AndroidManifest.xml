@@ -19,6 +19,7 @@
         <!--스플래시-->
         <activity android:name=".SplashActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <activity android:name=".StoreDetailActivity"/>
 
 
     </application>

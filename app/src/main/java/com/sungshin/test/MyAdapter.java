@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
-    private ArrayList<MainActivity.item> mDataset; //MainActivity에 item class를 정의해 놓았음
+    private ArrayList<StoreDetailActivity.item> mDataset; //StoreDetailActivity에 item class를 정의해 놓았음
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -33,7 +33,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
 
     // 생성자 - 넘어 오는 데이터파입에 유의해야 한다.
-    public MyAdapter(ArrayList<MainActivity.item> myDataset) {
+    public MyAdapter(ArrayList<StoreDetailActivity.item> myDataset) {
         mDataset = myDataset;
     }
 
